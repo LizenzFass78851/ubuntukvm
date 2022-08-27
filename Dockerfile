@@ -4,13 +4,14 @@ RUN apt-get update -y
 RUN apt-get install -y qemu-kvm libvirt-daemon-system libvirt-dev ovmf 
 RUN apt-get install -y linux-image-$(uname -r) 
 #RUN apt-get install -y wget && \
-#  wget https://launchpad.net/~canonical-kernel-security-team/+archive/ubuntu/ppa/+build/24249834/+files/linux-image-unsigned-5.15.0-46-generic_5.15.0-46.49_amd64.deb && \
+#  wget https://launchpad.net/~canonical-signing/+archive/ubuntu/primary/+build/24262433/+files/linux-image-5.15.0-46-generic_5.15.0-46.49_amd64.deb && \
 #  wget https://launchpad.net/~canonical-kernel-security-team/+archive/ubuntu/ppa/+build/24249834/+files/linux-modules-5.15.0-46-generic_5.15.0-46.49_amd64.deb && \
 #  wget https://launchpad.net/ubuntu/+archive/primary/+files/linux-base_4.5ubuntu9_all.deb
-RUN dpkg -i ./linux-image-unsigned-5.15.0-46-generic_5.15.0-46.49_amd64.deb \
-  linux-modules-5.15.0-46-generic_5.15.0-46.49_amd64.deb \
-  linux-base_4.5ubuntu9_all.deb && \
-  rm linux*.deb
+#RUN dpkg -i \
+#  ./linux-image-5.15.0-46-generic_5.15.0-46.49_amd64.deb \
+#  ./linux-modules-5.15.0-46-generic_5.15.0-46.49_amd64.deb \
+#  ./linux-base_4.5ubuntu9_all.deb && \
+#  rm linux*.deb
 RUN apt-get install -y curl net-tools jq build-essential
 RUN apt-get autoclean 
 RUN apt-get autoremove 
