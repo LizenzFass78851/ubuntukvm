@@ -1,0 +1,22 @@
+version: "3" 
+
+services: 
+  windowsvm: 
+    container_name: kvmcontainer1
+    image: ubuntukvm 
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    ports: 
+      - 3389:3389 
+    volumes:
+      - "./vagrant:/vagrant"
+      - "/sys/fs/cgroup" 
+    devices: 
+      - "/dev/kvm:/dev/kvm" 
+      - "/dev/net/tun:/dev/net/tun"
+    cap_add: 
+      - NET_ADMIN 
+      - SYS_ADMIN
+    privileged: true
+    #network_mode: host
