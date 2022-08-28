@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y 
-RUN apt-get install -y qemu-kvm libvirt-daemon-system libvirt-dev ovmf 
+RUN apt-get install -y qemu-kvm libvirt-daemon-system libvirt-dev libvirt-clients bridge-utils ovmf 
 RUN apt-get install -y linux-image-$(uname -r) 
 #RUN apt-get install -y wget && \
 #  wget https://launchpad.net/~canonical-signing/+archive/ubuntu/primary/+build/24262433/+files/linux-image-5.15.0-46-generic_5.15.0-46.49_amd64.deb && \
@@ -23,4 +23,5 @@ RUN vagrant plugin install vagrant-libvirt
 RUN vagrant box add --provider libvirt peru/windows-10-enterprise-x64-eval
 RUN vagrant init peru/windows-10-enterprise-x64-eval 
 COPY startup.sh /
+RUN chmod +x /startup.sh
 ENTRYPOINT ["/startup.sh"]
