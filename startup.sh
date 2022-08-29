@@ -5,6 +5,9 @@ chown root:kvm /dev/kvm
 service libvirtd start
 service virtlogd start
 VAGRANT_DEFAULT_PROVIDER=libvirt vagrant up
+
+#sleep 3m
+
 iptables-save > $HOME/firewall.txt
 iptables -X
 iptables -t nat -F
