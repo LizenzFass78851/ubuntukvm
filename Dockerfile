@@ -16,7 +16,7 @@ RUN apt-get install -y linux-image-$(uname -r)
 #  ./linux-base_4.5ubuntu9_all.deb && \
 #  rm linux*.deb
 
-RUN apt-get install -y curl net-tools jq build-essential
+RUN apt-get install -y curl net-tools jq build-essential nmap
 
 RUN apt-get autoclean 
 RUN apt-get autoremove 
