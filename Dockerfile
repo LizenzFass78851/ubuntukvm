@@ -21,8 +21,8 @@ RUN apt-get install -y curl net-tools jq build-essential nmap
 RUN apt-get autoclean 
 RUN apt-get autoremove 
 
-RUN curl -O https://releases.hashicorp.com/vagrant/$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')/vagrant_$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')_x86_64.deb 
-RUN dpkg -i vagrant_$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')_x86_64.deb 
+RUN curl -O https://releases.hashicorp.com/vagrant/$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')/vagrant_$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')-1_amd64.deb 
+RUN dpkg -i vagrant_$(curl -s https://checkpoint-api.hashicorp.com/v1/check/vagrant | jq -r -M '.current_version')-1_amd64.deb 
 #RUN curl -O https://releases.hashicorp.com/vagrant/2.3.0/vagrant_2.3.0-1_amd64.deb
 #RUN dpkg -i ./vagrant_2.3.0-1_amd64.deb 
 
