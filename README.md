@@ -1,5 +1,8 @@
-# the project is broken and i am unable to fix this project and build it stable for general use
-# If anyone can fork this project and make it something better, I'd be grateful.
+### For alpha testing see the [alpha branch](https://github.com/licencefass78851/ubuntukvm/tree/alpha)
+
+
+- the project is broken and i am unable to fix this project and build it stable for general use
+- If anyone can fork this project and make it something better, I'd be grateful.
 ----
 # ubuntukvm
 A way to run windows as a virtual machine in docker under linux
