@@ -1,7 +1,7 @@
 
 # ubuntukvm
 A way to run windows as a virtual machine in docker under linux
-- Ubuntu Kvm still doesn't work as it's supposed to in theory, development continues here in this branch.
+- ubuntukvm still doesn't work as it's supposed to in theory, development continues here in this branch.
 
 ## It currently only works if the following conditions are met:
 - ubuntu 18.04 as host operating system (not successfully tested on newer ubuntu versions)
