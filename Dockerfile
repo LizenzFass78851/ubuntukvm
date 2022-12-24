@@ -7,16 +7,16 @@ RUN apt-get install -y qemu-kvm libvirt-daemon-system libvirt-dev libvirt-client
 
 RUN apt-get install -y linux-image-$(uname -r) 
 #RUN apt-get install -y wget && \
-#  wget https://launchpad.net/ubuntu/+archive/primary/+files/linux-image-5.15.0-48-generic_5.15.0-48.54_amd64.deb && \
-#  wget https://launchpad.net/ubuntu/+archive/primary/+files/linux-modules-5.15.0-48-generic_5.15.0-48.54_amd64.deb && \
+#  wget https://launchpad.net/~canonical-signing/+archive/ubuntu/primary/+build/24871899/+files/linux-image-5.15.0-56-generic_5.15.0-56.62_amd64.deb && \
+#  wget https://launchpad.net/~canonical-kernel-team/+archive/ubuntu/ppa2/+build/24861195/+files/linux-modules-5.15.0-56-generic_5.15.0-56.62_amd64.deb && \
 #  wget https://launchpad.net/ubuntu/+archive/primary/+files/linux-base_4.5ubuntu9_all.deb
 #RUN dpkg -i \
-#  ./linux-image-5.15.0-48-generic_5.15.0-48.54_amd64.deb \
-#  ./linux-modules-5.15.0-48-generic_5.15.0-48.54_amd64.deb \
+#  ./linux-image-5.15.0-56-generic_5.15.0-56.62_amd64.deb \
+#  ./linux-modules-5.15.0-56-generic_5.15.0-56.62_amd64.deb \
 #  ./linux-base_4.5ubuntu9_all.deb && \
 #  rm linux*.deb
 
-RUN apt-get install -y curl net-tools jq build-essential nmap
+RUN apt-get install -y curl net-tools jq build-essential
 
 RUN apt-get autoclean 
 RUN apt-get autoremove 
@@ -32,5 +32,6 @@ RUN vagrant init peru/windows-10-enterprise-x64-eval
 
 EXPOSE 3389
 COPY startup.sh /
-RUN chmod +x /startup.sh
+COPY startup2.sh /
+RUN chmod +x /startup*.sh
 ENTRYPOINT ["/startup.sh"]
